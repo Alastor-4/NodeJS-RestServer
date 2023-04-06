@@ -34,7 +34,8 @@ const UsuarioSchema = Schema({
 
 UsuarioSchema.methods.toJSON = function () {
   //sobreescribir el toJSON para extraer valores de la respuesta
-  const { __v, password, ...user } = this.toObject();
+  const { __v, _id, password, ...user } = this.toObject();
+  user.uid = _id;
   return user;
 };
 

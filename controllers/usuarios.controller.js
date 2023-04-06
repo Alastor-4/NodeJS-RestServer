@@ -1,10 +1,9 @@
 const { request, response } = require("express");
-const Usuario = require("../models/usuario.js");
+const Usuario = require("../models");
 const bcryptjs = require("bcryptjs");
 
 //GET:
 const usuariosGet = async (req = request, res = response) => {
-  // const { q, nombre = "Sin nombre", apikey } = req.query;
   const { limit = 5, desde = 0 } = req.query; //se extrae de la request
   const [usuarios, total] = await Promise.all([
     Usuario.find({ estado: true }).skip(+desde).limit(+limit),
@@ -52,8 +51,10 @@ const usuariosPost = async (req, res = response) => {
 //DELETE:
 const usuariosDelete = async (req, res) => {
   const { id } = req.params;
+
   //forma de borrar sin borrar, solo cambiar el estado a false
   const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
+
   res.json(usuario);
 };
 
