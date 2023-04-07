@@ -1,5 +1,4 @@
 const { response } = require("express");
-const { body } = require("express-validator");
 const { Producto } = require("../models");
 
 const obtenerProductos = async (req, res) => {
