@@ -145,7 +145,7 @@ const mostrarImagen = async (req, res = response) => {
 
 module.exports = {
   cargarArchivos,
-  actualizarImagen,
+  // actualizarImagen,
   mostrarImagen,
   actualizarImagenCloudinary,
 };

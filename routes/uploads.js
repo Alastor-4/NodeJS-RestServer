@@ -2,7 +2,7 @@ const { Router } = require("express");
 const { check } = require("express-validator");
 const {
   cargarArchivos,
-  actualizarImagen,
+  // actualizarImagen,
   mostrarImagen,
   actualizarImagenCloudinary,
 } = require("../controllers/uploads");
