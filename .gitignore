@@ -1,6 +1,14 @@
 
 node_modules/
 
+assets/
+controllers/
+database/
+helpers/
+middlewares/
+models/
+public/
+
 .env
 
 uploads/productos/**.*
